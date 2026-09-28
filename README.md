@@ -3,7 +3,7 @@
 Data and code behind two notes on gs3393.github.io:
 
 - *What "Background Preservation" Actually Measures in Image-Editing Benchmarks* — https://gs3393.github.io/notes/editing-benchmark-background-metric.html
-- *Give Every Method the Same Mask* — follow-up (link added when published)
+- *Give Every Method the Same Mask* — https://gs3393.github.io/notes/equalized-mask-table.html
 
 Five text-guided image-editing methods (FTEdit, FlowEdit, FlowAlign, DNAEdit, DirectEdit) on a 151-image subset of PIE-Bench with SD3.5-medium, under three mask conditions: no mask, the benchmark's ground-truth mask pasted back at every step, and pixel compositing. Plus a VAE round-trip "no-edit" reference and two FlowAlign checks (resolution; output normalization).
 
