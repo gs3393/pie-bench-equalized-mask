@@ -70,7 +70,7 @@ def print_ranks(title, table):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--results", default=os.path.expanduser("~/workspace/pie-bench/results"))
+    ap.add_argument("--results", default=os.path.join(os.path.expanduser(os.environ.get("PIE_BENCH_WORKSPACE", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "results"))
     ap.add_argument("--methods", nargs="+", default=["ftedit", "flowedit", "flowalign", "dnaedit", "directedit"])
     ap.add_argument("--conds", nargs="+", default=["nomask", "gtmask", "pixpaste"])
     a = ap.parse_args()

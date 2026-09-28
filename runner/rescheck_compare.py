@@ -2,7 +2,7 @@
 사용: rescheck_compare.py <base_run> <other_run> [<other_run> ...]
 base_run 의 file_id 집합으로 다른 실행을 필터한다(151장 실행에서 20장 골라내기 등)."""
 import os, sys, numpy as np, pandas as pd
-R = os.path.expanduser("~/workspace/pie-bench/results")
+R = os.path.join(os.path.expanduser(os.environ.get("PIE_BENCH_WORKSPACE", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "results")
 METRICS = ["structure_distance", "psnr_unedit_part", "lpips_unedit_part", "mse_unedit_part",
            "ssim_unedit_part", "clip_similarity_target_image", "clip_similarity_target_image_edit_part"]
 SHORT = ["Struct", "PSNR", "LPIPS", "MSE", "SSIM", "CLIPw", "CLIPe"]

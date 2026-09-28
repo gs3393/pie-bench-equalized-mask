@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -x
-WS=~/workspace/pie-bench
-cd $WS
-export HF_HOME=~/.cache/huggingface
+WS="${PIE_BENCH_WORKSPACE:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)}"
+cd "$WS"
+export HF_HOME="${HF_HOME:-$WS/.cache/huggingface}"
 export CUDA_VISIBLE_DEVICES=${GPU:-0}
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export PYTHONPATH=$WS/DirectEdit

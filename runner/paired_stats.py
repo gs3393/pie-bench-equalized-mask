@@ -1,7 +1,7 @@
 """GT 마스크 조건에서 남는 방법 간 차이가 표본 잡음 안인지: 이미지별 짝지은 차이와 bootstrap 95% CI.
 또 픽셀 합성 조건처럼 동점이 생기는 열은 평균 순위(동점은 순위 평균)로 다시 매긴다."""
 import os, sys, numpy as np, pandas as pd
-R = os.path.expanduser("~/workspace/pie-bench/results")
+R = os.path.join(os.path.expanduser(os.environ.get("PIE_BENCH_WORKSPACE", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "results")
 METRICS = ["structure_distance", "psnr_unedit_part", "lpips_unedit_part", "mse_unedit_part",
            "ssim_unedit_part", "clip_similarity_target_image", "clip_similarity_target_image_edit_part"]
 SHORT = ["Struct", "PSNR", "LPIPS", "MSE", "SSIM", "CLIPw", "CLIPe"]

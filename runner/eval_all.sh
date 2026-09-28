@@ -2,11 +2,11 @@
 # 조건별로 DirectEdit 평가 스크립트를 그대로 돌린다.
 # evaluate.py 가 stat_ 파일을 CWD 상대경로로 쓰기 때문에 evaluation/ 에서 돌린 뒤 옮긴다.
 set -e
-WS=~/workspace/pie-bench
+WS="${PIE_BENCH_WORKSPACE:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)}"
 SUBSET=${SUBSET:-$WS/PIE-bench-150}
 export PYTHONPATH=$WS/DirectEdit:$PYTHONPATH
 mkdir -p $WS/results
-cd $WS/DirectEdit/evaluation
+cd "$WS"/DirectEdit/evaluation
 for c in "$@"; do
   echo "=== evaluating $c ==="
   $WS/.venv/bin/python evaluate.py \
