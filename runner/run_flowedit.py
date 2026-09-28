@@ -1,6 +1,6 @@
 """FlowEdit (공식 fallenshock 저장소, SD3 경로) 배치 실행 + 선택적 GT 마스크 블렌딩.
 
-FlowEdit_utils.FlowEditSD3 를 복사하고 한 줄만 넣었다:
+FlowEdit_utils.FlowEditSD3 를 복사하고 블렌딩 한 줄을 넣었다. 그 외 편차: n_min>0 분기 제거(assert), CFG 4배치 고정, 이미지별 재시드, 백본 SD3.5-medium. 블렌딩 줄:
   zt_edit = zt_edit*mask + x_src*(1-mask)   # 매 step, ODE 갱신 직후
 FlowEdit 의 운반 변수 zt_edit 는 x_src + 누적 델타 (깨끗한 좌표) 이므로, 붙여 넣는 "원본"은 매 step 같은 x_src 다.
 마지막 step 에서 마스크 밖은 VAE 인코딩 원본 그 자체가 되어 DirectEdit/FTEdit 조건과 같은 정의다.

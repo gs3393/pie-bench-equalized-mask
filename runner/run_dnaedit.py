@@ -6,6 +6,7 @@ ref 는 그 step 이 끝나는 노이즈 수준에 대응하는 "기록된 inver
 마지막 step 에서는 VAE 인코딩 원본 x_src 다. DirectEdit/FTEdit 조건과 같은 정의다.
 하이퍼파라미터는 configs/DNAEdit_SD3_exp.yaml: T 40, T_start 13, src_cfg 1, tar_cfg 3.5, mvg 0.8, seed 0.
 공식 스크립트는 DNA-Bench 의 long_mapping_file.json(긴 프롬프트)을 쓰지만 여기서는 다른 조건과 같은 PIE-Bench 원 프롬프트를 쓴다.
+그 외 편차: 소스/타깃 CFG 플래그를 분리(상류는 타깃 CFG 로 설정된 플래그로 소스 배치를 결정), 이미지별 재시드, 백본 SD3.5-medium.
 백본은 다른 조건과 같은 SD3.5-medium (논문 Table 1 의 DNAEdit-SD3.5 행에 해당).
 """
 import argparse, os, sys, time, traceback, json

@@ -1,0 +1,9 @@
+# Prompt sent to gpt-6-astra (xhigh, read-only, cwd = audit-251901459) — run02, interpretation-level review of NOTE2
+
+Role: hostile referee for a blog note about to be published; interpretation-level (overreach, wrong metric definitions, observation→cause slides, new overreach introduced by earlier fixes). Numbers already checked separately; re-check any doubted, but spend effort on meaning. Report findings with the exact sentence and required wording; do not rewrite.
+
+Target: claims/NOTE2-equalized-mask-table.md. Context: PRIOR-CRITIQUES.md (rounds A–C, verify each fix is present and created no new problem), the published first note (consistency), the audited measurement report (section 5.1 extended after audit), results/ (CSVs incl. FlowAlign save/resolution checks), runner/, src/ (upstream + paper text), figures/ (check captions and citing sentences against the images and CSV rows for ids 000000000130, 223000000001, 611000000004), PUBLIC-REPO-README.md (must not claim more than the note).
+
+Tests requested: (1) every "because/so/means/shows/explains/accounts for/produced/moves/cost" sentence — supported by an experiment varying only that factor? (2) metric definitions everywhere incl. captions; (3) FlowAlign section hypothesis/observation boundary in every sentence; recompute "third with min/max, first with fixed range"; (4) ranking prose — residual causal language; 0.43 as sensitivity not superiority; (5) alignment section — any attribution to the component; (6) figures 1–3 numbers and visual claims; (7) consistency with the first note; (8) "audited" vs "validated"; public repo description accuracy; (9) anything the prior rounds missed.
+
+Output: findings with MUST FIX / SHOULD FIX / NIT, quoted sentence, why, required wording; prior-round fixes confirmed present; one paragraph on publishability. A false "fine" is worse than a false alarm.

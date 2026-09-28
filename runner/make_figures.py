@@ -74,8 +74,8 @@ it=mapping[fid]
 m=np.asarray(mask_img(fid))>127; ys,xs=np.nonzero(m); x0,x1,y0,y1=max(0,xs.min()-40),min(512,xs.max()+40),max(0,ys.min()-40),min(512,ys.max()+40)
 side=max(x1-x0,y1-y0); cx,cy=(x0+x1)//2,(y0+y1)//2; x0,y0=max(0,cx-side//2),max(0,cy-side//2); x1,y1=min(512,x0+side),min(512,y0+side)
 crop=lambda im: im.crop((x0,y0,x1,y1))
-fig=panel([overlay(src_img(fid),mask_img(fid)), edit_img(nm,fid), edit_img(gm,fid), crop(edit_img(gm,fid))],
-          ["source + GT mask","%s, no mask  Struct %.1f"%(meth,ra["structure_distance"]),"%s, GT mask  Struct %.1f  bg-PSNR %.1f"%(meth,rb["structure_distance"],rb["psnr_unedit_part"]),"GT mask, zoom at the boundary"],
+fig=panel([overlay(src_img(fid),mask_img(fid)), edit_img(nm,fid), edit_img(gm,fid)],
+          ["source + GT mask","%s, no mask  Struct %.1f"%(meth,ra["structure_distance"]),"%s, GT mask  Struct %.1f  bg-PSNR %.1f"%(meth,rb["structure_distance"],rb["psnr_unedit_part"])],
           "Paste raised Structure Distance: %s -> %s  |  id %s"%(it["original_prompt"].replace("[","").replace("]",""), it["editing_prompt"].replace("[","").replace("]",""), fid)[:220])
 fig.save(os.path.join(O,"fig2-seam.png")); print("fig2", meth, fid, "dStruct %+.2f area %.2f"%(dS,ar))
 

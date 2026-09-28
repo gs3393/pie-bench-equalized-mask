@@ -6,6 +6,7 @@ FlowAlign 의 운반 변수 xt 는 zsrc 에서 출발해 편집된 깨끗한 lat
 붙여 넣는 "원본"은 매 step 같은 zsrc 다. 마지막 step 에서 마스크 밖은 VAE 인코딩 원본 그 자체다.
 하이퍼파라미터는 run_edit.py 기본값: NFE 33, cfg 13.5, n_start 0, seed 123. 해상도는 PIE-Bench 에 맞춰 512 (기본값 1024 대신).
 원 저장소의 encode 는 latent_dist.sample() 이지만 다른 조건과 같이 mode() 를 쓴다 (원본 latent 를 확정적으로 만들기 위함).
+그 외 편차: 이미지별 재시드, 저장 변환(--save_norm clamp 는 고정 범위, minmax 는 상류 save_image(normalize=True) 의 정책을 runner 가 직접 구현한 것이며 바이트 동일성은 시험하지 않음).
 백본은 다른 조건과 같은 SD3.5-medium (논문 Table 1 의 FlowAlign-SD3.5 행에 해당).
 """
 import argparse, os, sys, time, traceback, json
