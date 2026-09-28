@@ -1,0 +1,9 @@
+n = 151 images; background n = 120
+metric     flowalign_minmax151_n      flowalign_nomask     paper
+Struct                     36.11                 13.26     33.49
+PSNR                       24.81                 27.32     24.06
+LPIPS                      53.39                 45.44     68.91
+MSE                        45.66                 26.85     54.29
+SSIM                       88.47                 91.30     86.33
+CLIPw                      26.60                 26.66     25.64
+CLIPe                      22.59                 22.67     22.40

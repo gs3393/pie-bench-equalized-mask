@@ -1,0 +1,9 @@
+n = 20 images; background n = 17
+metric     flowalign1024ds_nomas      flowalign_nomask flowalign_minmax_noma  flowalign1024_nomask     paper
+Struct                      9.78                 16.41                 75.51                167.04     33.49
+PSNR                       32.16                 27.55                 24.04                 14.51     24.06
+LPIPS                      25.54                 34.25                 51.89                277.66     68.91
+MSE                         7.68                 21.85                 57.00                589.91     54.29
+SSIM                       95.14                 93.28                 87.23                 69.49     86.33
+CLIPw                      28.12                 28.11                 28.10                 24.81     25.64
+CLIPe                      22.33                 22.76                 22.74                 20.60     22.40
